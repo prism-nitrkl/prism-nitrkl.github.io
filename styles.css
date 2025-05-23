@@ -53,6 +53,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 20px;
+  position: relative; /* Ensure positioning context for children */
 }
 
 .logo {
@@ -90,13 +91,33 @@ header {
   cursor: pointer;
   margin-right: 15px;
   transition: transform 0.3s ease;
+  position: absolute; /* Fix its position */
+  right: 20px; /* Align with padding of header-container */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
 }
 
-.mobile-menu-toggle:hover {
-  transform: rotate(90deg);
+/* Toggle between hamburger and close icons */
+.mobile-menu-toggle.active .hamburger-icon {
+  display: none;
 }
 
-/* Navigation styles */
+.mobile-menu-toggle.active .close-icon {
+  display: inline-block;
+}
+
+/* Hide logo when menu is active */
+.nav-menu.active ~ .logo {
+  display: none;
+}
+
+/* Navigation menu base styles */
+.nav-menu {
+  flex-basis: 100%;
+  order: 4;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 .nav-menu ul {
   display: flex;
   list-style: none;
@@ -591,7 +612,6 @@ footer {
 }
 
 .faculty-photo img {
-  /* width: 100%; */
   max-width: 250px;
   height: 250px;
   border-radius: 5px;
@@ -746,10 +766,20 @@ footer {
   height: 30px;
 }
 
+/* Ensure nav-menu is visible by default in desktop view */
+@media (min-width: 769px) {
+  .nav-menu {
+    display: block; /* Always visible in desktop */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .header-container {
     flex-wrap: wrap;
+    position: relative; /* Ensure positioning context */
   }
 
   .mobile-menu-toggle {
@@ -758,18 +788,25 @@ footer {
   }
 
   .nav-menu {
-    flex-basis: 100%;
-    order: 4;
-    display: none;
+    display: none; /* Hidden by default in mobile */
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-basis: 100%;
+    order: 4;
   }
 
   .nav-menu.active {
+    padding: 50px;
     display: block;
     opacity: 1;
     transform: translateY(0);
+    position: absolute; /* Position absolutely to avoid layout shifts */
+    top: 100%; /* Place below header */
+    left: 0;
+    width: 100%;
+    background-color: white; /* Match header background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Match header shadow */
+    z-index: 99; /* Ensure it appears below header but above content */
   }
 
   .nav-menu ul {

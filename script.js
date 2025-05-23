@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener("click", function () {
       navMenu.classList.toggle("active");
+      mobileMenuToggle.classList.toggle("active"); // Toggle active class on the toggle button
     });
   }
 
