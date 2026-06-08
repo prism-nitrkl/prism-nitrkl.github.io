@@ -79,9 +79,20 @@
       <section class="news">
         <h2>NEWS</h2>
       
-        <!-- 2026 -->
-        <button class="year-btn active">2026</button>
-        <div class="year-content" style="display: block">
+        <div class="news-tabs">
+          <button class="tab-btn active" onclick="showYear('y2026', this)">
+            2026
+          </button>
+          <button class="tab-btn" onclick="showYear('y2025', this)">
+            2025
+          </button>
+          <button class="tab-btn" onclick="showYear('y2024', this)">
+            2024
+          </button>
+        </div>
+      
+        <!-- 2026 News -->
+        <div id="y2026" class="year-news active-news">
       
           <div class="news-item">
             <p>[26.05.2026]
@@ -100,7 +111,8 @@
           </div>
       
           <div class="news-item">
-            <p>[11.04.2026] Debapriya et al.'s paper is accepted at
+            <p>[11.04.2026]
+              Debapriya et al.'s paper is accepted at
               <a href="https://ieeexplore.ieee.org/document/11539178">
                 IEEE ICCSP 2026
               </a>
@@ -108,7 +120,8 @@
           </div>
       
           <div class="news-item">
-            <p>[26.03.2026] Tanish and Vidhan have been selected as
+            <p>[26.03.2026]
+              Tanish and Vidhan have been selected as
               <a href="https://www.nitrkl.ac.in/Home/StudentAchievements/?id=24">
                 M.Tech Initiative Awardee and Delegate at IEEE SPACE 2026
               </a>
@@ -116,7 +129,8 @@
           </div>
       
           <div class="news-item">
-            <p>[25.03.2026] Dr. Sobhan Kanti Dhara has been selected as a
+            <p>[25.03.2026]
+              Dr. Sobhan Kanti Dhara has been selected as a
               <a href="https://ieeespace.org/yflp-award-winners-2026/">
                 Young Faculty Laureate Program (YFLP) Awardee and Delegate at IEEE SPACE 2026
               </a>
@@ -140,7 +154,8 @@
           </div>
       
           <div class="news-item">
-            <p>[22.01.2026] Vidhan et al.'s paper is accepted at
+            <p>[22.01.2026]
+              Vidhan et al.'s paper is accepted at
               <a href="https://ieeexplore.ieee.org/document/11478916/">
                 IEEE NCC 2026
               </a>
@@ -149,16 +164,16 @@
       
         </div>
       
-        <!-- 2025 -->
-        <button class="year-btn">2025</button>
-        <div class="year-content">
+        <!-- 2025 News -->
+        <div id="y2025" class="year-news">
       
           <div class="news-item">
             <p>[16.05.2025] Romala receives CVPR-WICV Travel Grant to attend CVPR 2025.</p>
           </div>
       
           <div class="news-item">
-            <p>[01.04.2025] Romala et al.'s paper is accepted at
+            <p>[01.04.2025]
+              Romala et al.'s paper is accepted at
               <a href="https://sites.google.com/view/wicv-cvpr-2025/program/accepted-papers?authuser=0">
                 WICV, CVPR 2025, and to be published at CVPRW'25
               </a>.
@@ -174,17 +189,19 @@
           </div>
       
           <div class="news-item">
-            <p>[01.02.2025] Romala et al. secure fully funded student project exhibition for ICORT 2025</p>
+            <p>[01.02.2025]
+              Romala et al. secure fully funded student project exhibition for ICORT 2025
+            </p>
           </div>
       
         </div>
       
-        <!-- 2024 -->
-        <button class="year-btn">2024</button>
-        <div class="year-content">
+        <!-- 2024 News -->
+        <div id="y2024" class="year-news">
       
           <div class="news-item">
-            <p>[26.10.2024] Two papers by
+            <p>[26.10.2024]
+              Two papers by
               <a href="https://ieeexplore.ieee.org/abstract/document/10958499">Romala et al.</a>
               and
               <a href="https://ieeexplore.ieee.org/abstract/document/10958509">Shaunak et al.</a>
