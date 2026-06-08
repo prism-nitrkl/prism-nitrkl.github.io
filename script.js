@@ -139,3 +139,21 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
   handleScroll(); // Trigger on page load
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const yearBtns = document.querySelectorAll(".year-btn");
+
+  yearBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+
+      const content = btn.nextElementSibling;
+
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  });
+});
