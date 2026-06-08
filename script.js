@@ -139,21 +139,21 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
   handleScroll(); // Trigger on page load
 });
+function showYear(yearId, clickedBtn) {
 
-document.addEventListener("DOMContentLoaded", () => {
-  const yearBtns = document.querySelectorAll(".year-btn");
-
-  yearBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("active");
-
-      const content = btn.nextElementSibling;
-
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
+  // Hide all year sections
+  document.querySelectorAll(".year-news").forEach(section => {
+    section.classList.remove("active-news");
   });
-});
+
+  // Remove active state from all tabs
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  // Show selected year
+  document.getElementById(yearId).classList.add("active-news");
+
+  // Highlight selected tab
+  clickedBtn.classList.add("active");
+}
