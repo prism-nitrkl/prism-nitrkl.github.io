@@ -874,37 +874,37 @@ footer {
     width: 200px;
   }
 }
-.year-btn {
-  width: 100%;
-  text-align: left;
-  padding: 12px 18px;
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  background: #0056b3;
-  color: white;
+.news-tabs {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-btn {
+  background: none;
   border: none;
+  padding: 10px 0;
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #777;
   transition: 0.3s;
 }
 
-.year-btn:hover {
-  background: #003f85;
+.tab-btn:hover {
+  color: #0056b3;
 }
 
-.year-btn::after {
-  content: " ▼";
-  float: right;
+.tab-btn.active {
+  color: #0056b3;
+  border-bottom: 3px solid #0056b3;
 }
 
-.year-btn.active::after {
-  content: " ▲";
-}
-
-.year-content {
+.year-news {
   display: none;
-  padding: 10px 15px;
-  border-left: 3px solid #0056b3;
-  margin-bottom: 10px;
+}
+
+.active-news {
+  display: block;
 }
