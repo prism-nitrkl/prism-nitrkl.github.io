@@ -1,1 +1,1 @@
-# prism-nitrkl_24.github.io
+# prism-nitrkl.github.io
